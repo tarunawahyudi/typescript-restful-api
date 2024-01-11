@@ -4,7 +4,7 @@ import Controller from "../core/Controller";
 class TodoController extends Controller {
 
     public get() {
-        super._request;
+        this._request;
     }
 }
 

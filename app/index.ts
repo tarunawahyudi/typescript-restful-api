@@ -2,11 +2,10 @@ import http from 'http';
 import Controller from './core/Controller';
 import TodoController from './controller/TodoController';
 
-function requestListener(req: any, res: any) {
-   
-}
 
-let controller: Controller;
-controller = new TodoController(requestListener);
+const controller = new Controller();
 
-http.createServer(requestListener).listen(8080);
+http.createServer((request, response) => {
+    controller.setRequest(request);
+    controller.setResponse(response);
+}).listen(8080);
